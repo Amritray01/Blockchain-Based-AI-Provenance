@@ -52,3 +52,4 @@ frontend/yarn-error.log*
 *.sln
 *.sw?
 .gemini/
+AGENTS.md

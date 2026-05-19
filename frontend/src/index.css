@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   Provenance.AI — Design System
+   Dual-Track Dark Theme: Vault (Amber/Gold) · Audit (Cyan/Blue)
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  /* ── Surface palette ────────────────────────────────────────────────── */
+  --surface-0:   #06060a;       /* page background               */
+  --surface-1:   #0c0c12;       /* card backgrounds               */
+  --surface-2:   #111118;       /* elevated panels                */
+  --surface-3:   #18181f;       /* hover / raised                 */
+  --border-dim:  rgba(255, 255, 255, 0.04);
+  --border-soft: rgba(255, 255, 255, 0.07);
+  --border-med:  rgba(255, 255, 255, 0.12);
+
+  /* ── Macro Track (Vault) — Warm amber/gold ─────────────────────────── */
+  --vault:        #f59e0b;
+  --vault-dim:    rgba(245, 158, 11, 0.08);
+  --vault-soft:   rgba(245, 158, 11, 0.15);
+  --vault-border: rgba(245, 158, 11, 0.20);
+  --vault-glow:   rgba(245, 158, 11, 0.06);
+
+  /* ── Micro Track (Audit) — Cool cyan ───────────────────────────────── */
+  --audit:        #22d3ee;
+  --audit-dim:    rgba(34, 211, 238, 0.08);
+  --audit-soft:   rgba(34, 211, 238, 0.15);
+  --audit-border: rgba(34, 211, 238, 0.20);
+  --audit-glow:   rgba(34, 211, 238, 0.06);
+
+  /* ── Status tokens ─────────────────────────────────────────────────── */
+  --success:        #10b981;
+  --success-dim:    rgba(16, 185, 129, 0.10);
+  --success-border: rgba(16, 185, 129, 0.20);
+  --danger:         #ef4444;
+  --danger-dim:     rgba(239, 68, 68, 0.10);
+  --danger-border:  rgba(239, 68, 68, 0.20);
+  --warn:           #f59e0b;
+  --warn-dim:       rgba(245, 158, 11, 0.10);
+  --warn-border:    rgba(245, 158, 11, 0.20);
+  --pending:        #8b5cf6;
+  --pending-dim:    rgba(139, 92, 246, 0.10);
+  --pending-border: rgba(139, 92, 246, 0.20);
+
+  /* ── Typography ────────────────────────────────────────────────────── */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, Consolas, monospace;
+}
+
+/* ── Global reset ──────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: var(--surface-0);
+  color: #94a3b8;
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Scrollbar ─────────────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+/* ── Utility animations ────────────────────────────────────────────────── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.4; }
+  50%      { opacity: 1; }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.4s ease-out both;
+}
+.animate-pulse-glow {
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent 25%, rgba(255,255,255,0.04) 50%, transparent 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.8s ease-in-out infinite;
+}
