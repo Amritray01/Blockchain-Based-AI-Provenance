@@ -1,0 +1,54 @@
+# ==========================================
+# PROVENANCE.AI CORE ROOT GITIGNORE
+# ==========================================
+
+# --- System & OS Files ---
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+*.bak
+
+# --- Backend (FastAPI / Python) ---
+backend/.venv/
+backend/env/
+backend/ENV/
+backend/__pycache__/
+backend/**/*.pyc
+backend/**/*.pyo
+backend/**/*.pyd
+backend/.pytest_cache/
+backend/provenance.db
+backend/provenance.db-journal
+
+# --- Smart Contracts (Hardhat / Solidity) ---
+contract/node_modules/
+contract/artifacts/
+contract/cache/
+contract/typechain/
+contract/typechain-types/
+contract/coverage/
+contract/coverage.json
+contract/.openzeppelin/
+
+# --- Frontend (Vite / React) ---
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+
+# --- Root IDE and local configs ---
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.gemini/
